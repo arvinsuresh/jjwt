@@ -19,12 +19,14 @@ public class AndroidBase64Codec extends AbstractTextCodec {
 
     @Override
     public String encode(byte[] data) {
-        int flags = android.util.Base64.NO_PADDING | android.util.Base64.NO_WRAP;
-        return android.util.Base64.encodeToString(data, flags);
+        //int flags = android.util.Base64.NO_PADDING | android.util.Base64.NO_WRAP;
+        //return android.util.Base64.encodeToString(data, flags);
+    	return "";
     }
 
     @Override
     public byte[] decode(String encoded) {
-        return android.util.Base64.decode(encoded, android.util.Base64.DEFAULT);
+        //return android.util.Base64.decode(encoded, android.util.Base64.DEFAULT);
+    	return null;
     }
 }

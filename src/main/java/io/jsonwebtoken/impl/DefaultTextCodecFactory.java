@@ -42,9 +42,11 @@ public class DefaultTextCodecFactory implements TextCodecFactory {
     @Override
     public TextCodec getTextCodec() {
 
+    	/* Removing android dependent code.
         if (isAndroid()) {
             return new AndroidBase64Codec();
         }
+    	 */
 
         return new Base64Codec();
     }

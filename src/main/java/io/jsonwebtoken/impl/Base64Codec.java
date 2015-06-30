@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 package io.jsonwebtoken.impl;
+import org.apache.commons.codec.binary.Base64;
 
 public class Base64Codec extends AbstractTextCodec {
 
     public String encode(byte[] data) {
-        return javax.xml.bind.DatatypeConverter.printBase64Binary(data);
+        //return javax.xml.bind.DatatypeConverter.printBase64Binary(data);
+    	return Base64.encodeBase64String(data);
     }
 
     @Override
     public byte[] decode(String encoded) {
-        return javax.xml.bind.DatatypeConverter.parseBase64Binary(encoded);
+        //return javax.xml.bind.DatatypeConverter.parseBase64Binary(encoded);
+    	return Base64.decodeBase64(encoded);
     }
 }

@@ -129,7 +129,9 @@ public abstract class EllipticCurveProvider extends SignatureProvider {
         try {
             KeyPairGenerator g = KeyPairGenerator.getInstance(jcaAlgorithmName, jcaProviderName);
             String paramSpecCurveName = EC_CURVE_NAMES.get(alg);
+            /* dont want to include bouncycastle dependencies.
             g.initialize(org.bouncycastle.jce.ECNamedCurveTable.getParameterSpec(paramSpecCurveName), random);
+            */
             return g.generateKeyPair();
         } catch (Exception e) {
             throw new IllegalStateException("Unable to generate Elliptic Curve KeyPair: " + e.getMessage(), e);
